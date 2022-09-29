@@ -29,6 +29,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final _sampleEvents = sampleEvents();
     final cellCalendarPageController = CellCalendarPageController();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),

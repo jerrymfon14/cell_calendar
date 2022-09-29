@@ -103,20 +103,24 @@ class _CalendarPageView extends StatelessWidget {
       children: [
         MonthYearLabel(monthYearLabelBuilder),
         Expanded(
-          child: PageView.builder(
-            controller:
-                cellCalendarPageController ?? CellCalendarPageController(),
-            itemBuilder: (context, index) {
-              return _CalendarPage(
-                index.visibleDateTime,
-                daysOfTheWeekBuilder,
-                dateTextStyle,
-              );
-            },
-            onPageChanged: (index) {
-              Provider.of<CalendarStateController>(context, listen: false)
-                  .onPageChanged(index);
-            },
+          child: Material(
+            elevation: 5,
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            child: PageView.builder(
+              controller:
+                  cellCalendarPageController ?? CellCalendarPageController(),
+              itemBuilder: (context, index) {
+                return _CalendarPage(
+                  index.visibleDateTime,
+                  daysOfTheWeekBuilder,
+                  dateTextStyle,
+                );
+              },
+              onPageChanged: (index) {
+                Provider.of<CalendarStateController>(context, listen: false)
+                    .onPageChanged(index);
+              },
+            ),
           ),
         ),
       ],
@@ -159,7 +163,13 @@ class _CalendarPage extends StatelessWidget {
     final days = _getCurrentDays(visiblePageDate);
     return Column(
       children: [
+        SizedBox(
+          height: 10,
+        ),
         DaysOfTheWeek(daysOfTheWeekBuilder),
+        SizedBox(
+          height: 10,
+        ),
         Expanded(
           child: Column(
             mainAxisSize: MainAxisSize.min,

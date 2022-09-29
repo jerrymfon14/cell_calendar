@@ -60,11 +60,11 @@ class _DayCell extends StatelessWidget {
         },
         child: DecoratedBox(
           decoration: BoxDecoration(
-            border: Border(
-              top: BorderSide(color: Theme.of(context).dividerColor, width: 1),
-              right:
-                  BorderSide(color: Theme.of(context).dividerColor, width: 1),
-            ),
+            // border: Border(
+            //   top: BorderSide(color: Theme.of(context).dividerColor, width: 0),
+            //   right:
+            //       BorderSide(color: Theme.of(context).dividerColor, width: 0),
+            // ),
           ),
           child: MeasureSize(
             onChange: (size) {
